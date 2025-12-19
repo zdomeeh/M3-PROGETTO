@@ -44,15 +44,21 @@ TagManager:
   - name: Ground
     uniqueID: 2956806481
     locked: 0
+  - name: Floor
+    uniqueID: 734317101
+    locked: 0
   - name: BorderMap
     uniqueID: 3806712709
     locked: 0
-  - name: Objects
-    uniqueID: 2164162059
+  - name: ObjectCollider
+    uniqueID: 1259048293
     locked: 0
   - name: Characters
     uniqueID: 1470890231
     locked: 0
   - name: Bullets
     uniqueID: 608618081
+    locked: 0
+  - name: Objects
+    uniqueID: 2164162059
     locked: 0

@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
     private PlayerController playerController;
+    [SerializeField] private string verticalDirName = "VerticalDirection";
+    [SerializeField] private string horizontalDirName = "HorizontalDirection";
+    private Vector2 lastDir = Vector2.zero;
 
     private void Awake()
     {
@@ -19,7 +20,12 @@ public class PlayerAnimation : MonoBehaviour
         bool isMoving = playerController.Direction != Vector2.zero;
         animator.SetBool("IsMoving", isMoving);
 
-        animator.SetFloat("HorizontalDirection", dir.x);
+        if (dir != Vector2.zero)
+        {
+          lastDir = dir;
+        }
+        animator.SetFloat(verticalDirName, lastDir.y);
+        animator.SetFloat(horizontalDirName, lastDir.x);
 
     }
 
