@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16972014fbddc9d43afda51fb6df94f6
+guid: 396d3f1b27154874d89c86e42cbf2ee7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rubber duck_0
+      name: Run_MP_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 4
-        height: 5
+        x: 56
+        y: 58
+        width: 81
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67526e3e1e229b4984aa843539b9c7d
-      internalID: 2072807567
+      spriteID: 4886b29310354084180a28c72a1ab7f9
+      internalID: 2059788498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rubber duck_1
+      name: Run_MP_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 33
-        height: 23
+        x: 247
+        y: 58
+        width: 82
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9767e795606c8a4bb80074b636d75de
-      internalID: -1849178365
+      spriteID: 5161a48852c8ed94da79cff28e842215
+      internalID: -1904715107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rubber duck_2
+      name: Run_MP_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 4
-        width: 31
-        height: 23
+        x: 440
+        y: 58
+        width: 81
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b282972c0c55df45bd1113d7afb198f
-      internalID: 239866703
+      spriteID: dc66acf0125f55446b03a0e50f965c67
+      internalID: -1742276362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rubber duck_3
+      name: Run_MP_3
       rect:
         serializedVersion: 2
-        x: 65
-        y: 5
-        width: 30
-        height: 23
+        x: 632
+        y: 58
+        width: 82
+        height: 71
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd3fedd330b0664eb4105af83c7dba9
-      internalID: -66696869
+      spriteID: 4a4ce7691968ef94aaafa47dc6517ff5
+      internalID: 667611331
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rubber duck_0: 2072807567
-      Rubber duck_1: -1849178365
-      Rubber duck_2: 239866703
-      Rubber duck_3: -66696869
+      Run_MP_0: 2059788498
+      Run_MP_1: -1904715107
+      Run_MP_2: -1742276362
+      Run_MP_3: 667611331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

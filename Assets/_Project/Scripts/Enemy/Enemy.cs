@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -9,11 +7,17 @@ public class Enemy : MonoBehaviour
 
     private Transform player;
     private LifeController playerLife;
+    private Rigidbody2D rb;
+    private EnemyAnimation enemyAnim;
+
+    public Vector2 Direction { get; private set; } // Direzione verso il Player
 
     private void Awake()
     {
-        // Trova il Player nella scena
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>(); // Recupera Rigidbody2D dal Inspector
+        enemyAnim = GetComponent<EnemyAnimation>();
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player"); // Trova il Player nella scena
         if (playerObj != null)
         {
             player = playerObj.transform;
@@ -21,13 +25,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (player != null)
         {
             // Movimento verso il Player
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.position += (Vector3)direction * speed * Time.deltaTime;
+            Vector2 dir = (player.position - transform.position).normalized;
+            Direction = dir;
+            rb.velocity = dir * speed;
+        }
+        
+        else
+        {
+            rb.velocity = Vector2.zero; // Se il Player non c'è
+            Direction = Vector2.zero;
         }
     }
 
@@ -37,8 +48,11 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && playerLife != null)
         {
             playerLife.TakeDamage(damageToPlayer);
-            // Distrugge se vuoi che il nemico sparisca dopo il contatto:
-            Destroy(gameObject);
+
+            // Chiama animazione di morte
+            if (enemyAnim != null) enemyAnim.PlayDeath();
+
+            Destroy(gameObject, 0.5f);
         }
     }
 }

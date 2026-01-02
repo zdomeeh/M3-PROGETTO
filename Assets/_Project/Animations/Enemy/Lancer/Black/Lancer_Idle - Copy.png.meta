@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0818518f69caf86458a322bd0a4af122
+guid: 8e977fd531f01bb419d021846167bf12
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sheep_Grass_0
+      name: Lancer_Idle - Copy_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 44
-        width: 45
-        height: 44
+        x: 114
+        y: 120
+        width: 72
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81c80d7155ac6f64d947047b485a0054
-      internalID: 774202368
+      spriteID: eba2c94528fcf3147ab25aa319ef6643
+      internalID: -255301178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_1
+      name: Lancer_Idle - Copy_1
       rect:
         serializedVersion: 2
-        x: 168
-        y: 44
-        width: 46
-        height: 42
+        x: 433
+        y: 120
+        width: 73
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 896d74fb88962b54fb29c4c21564e300
-      internalID: -1417896110
+      spriteID: 56c3444aabf58534d8960307e576dc42
+      internalID: -615915660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_2
+      name: Lancer_Idle - Copy_2
       rect:
         serializedVersion: 2
-        x: 297
-        y: 44
-        width: 47
-        height: 43
+        x: 754
+        y: 120
+        width: 71
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7e9249884eb8c4e887a91c2cf25ffb
-      internalID: -1514942293
+      spriteID: 7563a0fd9972aca4e9ba163f79598f0d
+      internalID: 1800797139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_3
+      name: Lancer_Idle - Copy_3
       rect:
         serializedVersion: 2
-        x: 424
-        y: 44
-        width: 46
-        height: 42
+        x: 1074
+        y: 120
+        width: 70
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a90a348556ec38c4a845d05185a62968
-      internalID: -1913107051
+      spriteID: e2d7f0ad8da43654cad161ae22619ea7
+      internalID: -1705958416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_4
+      name: Lancer_Idle - Copy_4
       rect:
         serializedVersion: 2
-        x: 553
-        y: 44
-        width: 47
-        height: 43
+        x: 1395
+        y: 120
+        width: 69
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bffa7134b98193e4c83c787bf2aa62a5
-      internalID: -914457129
+      spriteID: 07862087317515c429045e400557b09f
+      internalID: 2134766721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_5
+      name: Lancer_Idle - Copy_5
       rect:
         serializedVersion: 2
-        x: 680
-        y: 44
-        width: 46
-        height: 42
+        x: 1716
+        y: 120
+        width: 67
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a021eb5822d8c864fb4d3cdb44be0f9b
-      internalID: 698594775
+      spriteID: f69bbe59c5a686744882404432715010
+      internalID: 213282984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_6
+      name: Lancer_Idle - Copy_6
       rect:
         serializedVersion: 2
-        x: 809
-        y: 44
-        width: 47
-        height: 43
+        x: 2038
+        y: 120
+        width: 64
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05059aa41e104c040b004e59f01fa6a4
-      internalID: -603362522
+      spriteID: 87168bec37c79f14eb8e7ff58ec1296c
+      internalID: 1130538357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_7
+      name: Lancer_Idle - Copy_7
       rect:
         serializedVersion: 2
-        x: 936
-        y: 44
-        width: 46
-        height: 42
+        x: 2357
+        y: 120
+        width: 64
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05c72fb72370b0846ad2e61a95006876
-      internalID: 1540259125
+      spriteID: f03e4469149715e49a39c31504b57592
+      internalID: 1462076887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_8
+      name: Lancer_Idle - Copy_8
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 44
-        width: 47
-        height: 43
+        x: 2676
+        y: 120
+        width: 65
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9d7c374b06eb38478aad8f2a9a07cc7
-      internalID: -167081687
+      spriteID: 2ed098b02526b874596131eddb345228
+      internalID: -899912764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_9
+      name: Lancer_Idle - Copy_9
       rect:
         serializedVersion: 2
-        x: 1192
-        y: 44
-        width: 46
-        height: 42
+        x: 2996
+        y: 120
+        width: 66
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fd2a37744cb4f948811153a70bac30e
-      internalID: -2120716421
+      spriteID: 8d70ce7023f606f449ca2c1b7d20c3c3
+      internalID: 1125005321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_10
+      name: Lancer_Idle - Copy_10
       rect:
         serializedVersion: 2
-        x: 1321
-        y: 44
-        width: 47
-        height: 43
+        x: 3315
+        y: 120
+        width: 69
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de27e8ffa6f8db4497d9ffea5505b89
-      internalID: -493524890
+      spriteID: 4971e8163b31ff1408fb1705ec3e4ec1
+      internalID: 856441345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sheep_Grass_11
+      name: Lancer_Idle - Copy_11
       rect:
         serializedVersion: 2
-        x: 1449
-        y: 44
-        width: 45
-        height: 44
+        x: 3634
+        y: 120
+        width: 71
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0054c0ce956c04a4dbccd4d8436d4e6b
-      internalID: 830973036
+      spriteID: a1bef22eea089c6469ffb6110c6be085
+      internalID: 1559672658
       vertices: []
       indices: 
       edges: []
@@ -359,18 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sheep_Grass_0: 774202368
-      Sheep_Grass_1: -1417896110
-      Sheep_Grass_10: -493524890
-      Sheep_Grass_11: 830973036
-      Sheep_Grass_2: -1514942293
-      Sheep_Grass_3: -1913107051
-      Sheep_Grass_4: -914457129
-      Sheep_Grass_5: 698594775
-      Sheep_Grass_6: -603362522
-      Sheep_Grass_7: 1540259125
-      Sheep_Grass_8: -167081687
-      Sheep_Grass_9: -2120716421
+      Lancer_Idle - Copy_0: -255301178
+      Lancer_Idle - Copy_1: -615915660
+      Lancer_Idle - Copy_10: 856441345
+      Lancer_Idle - Copy_11: 1559672658
+      Lancer_Idle - Copy_2: 1800797139
+      Lancer_Idle - Copy_3: -1705958416
+      Lancer_Idle - Copy_4: 2134766721
+      Lancer_Idle - Copy_5: 213282984
+      Lancer_Idle - Copy_6: 1130538357
+      Lancer_Idle - Copy_7: 1462076887
+      Lancer_Idle - Copy_8: -899912764
+      Lancer_Idle - Copy_9: 1125005321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
