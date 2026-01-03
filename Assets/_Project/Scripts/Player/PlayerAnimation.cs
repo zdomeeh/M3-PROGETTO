@@ -29,12 +29,12 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
-    private void PlayDamage()
+    public void PlayDamage()
     {
         animator.SetTrigger("IsDamaged");
     }
 
-    private void PlayDeath()
+    public void PlayDeath()
     { 
         animator.SetBool("IsDeath",true);
     }

@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - Bullet
   - Gun
-  - 
-  - 
+  - SpawnZone
+  - Object
   - 
   - 
   - 

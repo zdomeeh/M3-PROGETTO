@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -8,14 +6,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float fireRate = 10f;
     [SerializeField] private float shootDistance = 5f;
 
-   // [SerializeField] private Vector3 offset = new Vector3(0.5f, 0.2f, 0f); // Offset della Gun rispetto al Player DA CAPIRE SE METTERLO!!!!
-
     private float fireTimer;
-
-    //  private void Start()
-    //  {
-    //      transform.localPosition = offset; // Posiziona l'arma con l'offset all'inizio   DA CAPIRE SE METTERLO!!!!
-    //  }
 
     private void Update()
     {
@@ -41,7 +32,14 @@ public class Gun : MonoBehaviour
         {
             bullet.SetDirection(direction);
         }
-    }
+
+        AudioManager playerAudio = GetComponent<AudioManager>();
+
+        if (playerAudio != null)
+        {
+            playerAudio.PlayShoot();
+        }
+}
 
     private bool EnemyInRange()
     {
