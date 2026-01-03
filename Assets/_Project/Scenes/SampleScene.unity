@@ -23010,7 +23010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9253cc90bf4c06b4f9d94c8e6deac5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
 --- !u!70 &712217045
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23187,7 +23187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba25bc20eaadebe4f8a52d017b5e60ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 1
+  maxLife: 100
 --- !u!114 &712217052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23200,10 +23200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7c0d07d9ef481469e3552154c7b828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsClip: {fileID: 8300000, guid: 67d5d44bda573c741a61c1a13c6fd2c9, type: 3}
+  footstepsClip: {fileID: 8300000, guid: 734e4a0bb2a61334491bd1e9fb579dae, type: 3}
   shootClip: {fileID: 8300000, guid: 8ed098620a8f71042ab9610f39875676, type: 3}
   deathClip: {fileID: 8300000, guid: 037028c55115a364b930a8e2a1f74fe2, type: 3}
   damageClip: {fileID: 8300000, guid: 7d5b0d2539421674a965af274ebad5bb, type: 3}
+  footstepInterval: 0.4
 --- !u!82 &712217053
 AudioSource:
   m_ObjectHideFlags: 0

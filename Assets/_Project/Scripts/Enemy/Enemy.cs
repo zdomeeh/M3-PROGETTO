@@ -45,12 +45,21 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Se collide con il Player, infligge danno
-        if (collision.gameObject.CompareTag("Player") && playerLife != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            playerLife.TakeDamage(damageToPlayer);
+            LifeController playerLife = collision.gameObject.GetComponent<LifeController>();
+
+            // Controlla se il player è morto
+            if (playerLife != null && playerLife.CurrentLife <= 0) return;
+
+            // Infligge danno
+            if (playerLife != null)
+            {
+                playerLife.TakeDamage(damageToPlayer);
+            }
 
             // Chiama animazione di morte
-            if (enemyAnim != null) enemyAnim.PlayDeath();
+            //  if (enemyAnim != null) enemyAnim.PlayDeath();
 
             Destroy(gameObject, 0.5f);
         }

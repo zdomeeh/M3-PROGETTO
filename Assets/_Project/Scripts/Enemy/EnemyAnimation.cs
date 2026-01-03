@@ -32,9 +32,9 @@ public class EnemyAnimation : MonoBehaviour
         animator.SetFloat(horizontalDirName, lastDir.x);
     }
 
-    public void PlayDeath()
-    {
-        animator.SetBool("IsDead", true);
-    }
+   // public void PlayDeath()
+   // {
+   //     animator.SetBool("IsDead", true);
+  //  }
 }
 

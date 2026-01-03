@@ -6,6 +6,7 @@ public class LifeController : MonoBehaviour
     private int currentLife;
 
     private PlayerAnimation playerAnimation;
+    private bool isDead = false; // Stato di morte
 
     private void Awake()
     {
@@ -16,9 +17,11 @@ public class LifeController : MonoBehaviour
     // Funzione per ricevere danno
     public void TakeDamage(int amount)
     {
+        if (isDead) return; // Se è già morto, ignora ulteriori danni
+
         currentLife -= amount;
 
-        // Fai partire l'animazione di danno se esiste
+        // Fai partire l'animazione di danno
         if (playerAnimation != null)
         {
             playerAnimation.PlayDamage();
@@ -40,6 +43,14 @@ public class LifeController : MonoBehaviour
     // Funzione che distrugge il GameObject quando la vita finisce
     private void Die()
     {
+        if (isDead) return;
+        isDead = true;
+
+        // Blocca la fisica per evitare spinta dei nemici
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.isKinematic = true;
+
         // Fai partire l'animazione di morte se esiste
         if (playerAnimation != null)
         {
@@ -53,8 +64,12 @@ public class LifeController : MonoBehaviour
             playerAudio.PlayDeath();
         }
         // Distruzione del GameObject con un piccolo delay per far vedere l'animazione
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 3f);
     }
+
+
+    // Getter per controllare se il player è morto
+    public bool IsDead => isDead;
 
     // Getter pubblico per leggere la vita da altri script
     public int CurrentLife => currentLife;

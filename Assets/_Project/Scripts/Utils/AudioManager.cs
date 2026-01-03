@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
 
     private AudioSource audioSource;
     private PlayerController playerController;
+    [SerializeField] private float footstepInterval = 0.4f; // intervallo tra passi
+    private float footstepTimer = 0f;
 
     private void Awake()
     {
@@ -25,13 +27,18 @@ public class AudioManager : MonoBehaviour
 
     private void HandleFootsteps()
     {
-        // Suono dei passi solo se il player si muove
         if (playerController.Direction != Vector2.zero)
         {
-            if (!audioSource.isPlaying && footstepsClip != null)
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f && footstepsClip != null)
             {
-                audioSource.PlayOneShot(footstepsClip, 0.5f); // volume 0.5
+                audioSource.PlayOneShot(footstepsClip, 0.5f);
+                footstepTimer = footstepInterval; // reset timer
             }
+        }
+        else
+        {
+            footstepTimer = 0f; // reset quando ti fermi
         }
     }
 

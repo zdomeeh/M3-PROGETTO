@@ -10,6 +10,15 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            LifeController life = player.GetComponent<LifeController>();
+
+            if (life != null && life.IsDead) return; // Blocca sparo se morto
+        }
+
         fireTimer += Time.deltaTime;
 
         if (fireTimer >= 1f / fireRate && EnemyInRange())
@@ -33,11 +42,16 @@ public class Gun : MonoBehaviour
             bullet.SetDirection(direction);
         }
 
-        AudioManager playerAudio = GetComponent<AudioManager>();
-
-        if (playerAudio != null)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            playerAudio.PlayShoot();
+
+            AudioManager playerAudio = player.GetComponent<AudioManager>();
+
+            if (playerAudio != null)
+            {
+                playerAudio.PlayShoot();
+            }
         }
 }
 
