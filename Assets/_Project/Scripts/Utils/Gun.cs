@@ -3,28 +3,35 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float fireRate = 10f;
+    [SerializeField] private float fireRate = 5f;
     [SerializeField] private float shootDistance = 5f;
+    [SerializeField] private int damage = 1;   // Danno base del bullet
 
+    private int level = 1;                      // Livello iniziale dell'arma
     private float fireTimer;
+    private LifeController playerLife; // riferimento al LifeController del Player
+    private AudioManager playerAudio;   // riferimento al AudioManager del Player
+
+    private void Awake()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerLife = player.GetComponent<LifeController>();
+            playerAudio = player.GetComponent<AudioManager>();
+        }
+    }
 
     private void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-        if (player != null)
-        {
-            LifeController life = player.GetComponent<LifeController>();
-
-            if (life != null && life.IsDead) return; // Blocca sparo se morto
-        }
+        if (playerLife != null && playerLife.IsDead) return; // Blocca sparo se morto
 
         fireTimer += Time.deltaTime;
 
-        if (fireTimer >= 1f / fireRate && EnemyInRange())
+        if (fireTimer >= 1f / fireRate && EnemyInRange()) // Se il timer ha raggiunto il limite e ci sono nemici in range, spara
         {
             Shoot();
-            fireTimer = 0f;
+            fireTimer = 0f; // reset del timer
         }
     }
 
@@ -40,20 +47,15 @@ public class Gun : MonoBehaviour
         if (bullet != null)
         {
             bullet.SetDirection(direction);
+            bullet.SetDamage(damage); // imposta il danno in base al livello
         }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
+        if (playerAudio != null)
         {
-
-            AudioManager playerAudio = player.GetComponent<AudioManager>();
-
-            if (playerAudio != null)
-            {
-                playerAudio.PlayShoot();
-            }
+            playerAudio.PlayShoot();
         }
-}
+    }
+
 
     private bool EnemyInRange()
     {
@@ -71,4 +73,20 @@ public class Gun : MonoBehaviour
         
         return false;
     }
+
+    public void LevelUp()
+    {
+        level++;
+        damage += 1;        // aumenta il danno per livello
+        fireRate += 0.5f;   // aumenta il fire rate
+        Debug.Log($"Gun leveled up! Level {level} | Damage {damage} | Fire Rate {fireRate}");
+
+        AudioManager audioManager = FindObjectOfType<AudioManager>(); // audio per il levelup
+        if (audioManager != null)
+        {
+            audioManager.PlayLevelUp();
+        }
+    }
 }
+
+

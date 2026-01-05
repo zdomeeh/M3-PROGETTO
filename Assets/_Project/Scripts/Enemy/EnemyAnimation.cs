@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour
@@ -31,10 +29,5 @@ public class EnemyAnimation : MonoBehaviour
         animator.SetFloat(verticalDirName, lastDir.y);
         animator.SetFloat(horizontalDirName, lastDir.x);
     }
-
-   // public void PlayDeath()
-   // {
-   //     animator.SetBool("IsDead", true);
-  //  }
 }
 

@@ -3,9 +3,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private int damage = 1;
     [SerializeField] private float lifeTime = 2f;
 
+    private int damage;
     private Rigidbody2D rb;
     private Vector2 direction;
 
@@ -17,6 +17,11 @@ public class Bullet : MonoBehaviour
     public void SetDirection(Vector2 dir) // Metodo pubblico chiamato dalla Gun subito dopo l'istanza del proiettile, imposto la direzione di movimento
     {
         direction = dir.normalized;
+    }
+
+    public void SetDamage(int amount)
+    {
+        damage = amount;
     }
 
     private void Start()
@@ -35,7 +40,7 @@ public class Bullet : MonoBehaviour
 
         if (life != null) // Se presente, applica il danno
         {
-            life.TakeDamage(damage);
+            life.TakeDamage(damage); // usa il damage passato dalla Gun
         }
 
         Destroy(gameObject); // Il proiettile viene distrutto dopo l'impatto

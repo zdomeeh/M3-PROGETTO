@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6476371465446391409}
   - component: {fileID: 2896263764485468902}
   - component: {fileID: 2723939592922335646}
+  - component: {fileID: 3996702319283365295}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba25bc20eaadebe4f8a52d017b5e60ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 20
+  maxLife: 15
 --- !u!70 &8894761867357786638
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +190,7 @@ Animator:
   m_GameObject: {fileID: 1814100168148615552}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 985ea8ed4bf169342aedc1fe7e220960, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -212,3 +213,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8b586c48d32704b9da3efa0d552972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalDirName: VerticalDirection
+  horizontalDirName: HorizontalDirection
+--- !u!114 &3996702319283365295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814100168148615552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdfb58d8779f2a45a048e147cdcf726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 7800854376747455375, guid: 19cb73b51be395d4aa2df097cf55e629, type: 3}
+  dropChance: 10

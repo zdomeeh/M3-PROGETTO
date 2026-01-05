@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnZone : MonoBehaviour
@@ -9,8 +7,8 @@ public class SpawnZone : MonoBehaviour
     [SerializeField] private bool spawnOnce = true;       // Spawn solo una volta
     [SerializeField] private float respawnCooldown = 5f;  // Tempo in secondi tra spawn multipli
 
-    private bool hasSpawned = false;
-    private float lastSpawnTime = -Mathf.Infinity; // Timestamp ultimo spawn
+    private bool hasSpawned = false; // Stato per spawnOnce
+    private float lastSpawnTime = -Mathf.Infinity; // Timestamp ultimo spawn per gestire il cooldown
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,13 +28,12 @@ public class SpawnZone : MonoBehaviour
 
     private void TrySpawn()
     {
-        // Controlla cooldown e spawnOnce
-        if (spawnOnce && hasSpawned) return;
-        if (Time.time < lastSpawnTime + respawnCooldown) return;
+        if (spawnOnce && hasSpawned) return; // Blocca spawn se spawnOnce e già spawnato
+        if (Time.time < lastSpawnTime + respawnCooldown) return; // Blocca spawn se ancora in cooldown
 
         SpawnEnemies();
-        lastSpawnTime = Time.time;
-        hasSpawned = true;
+        lastSpawnTime = Time.time; // Aggiorna il timestamp dell'ultimo spawn
+        hasSpawned = true; // Segna come spawnato
     }
 
     private void SpawnEnemies()
@@ -51,8 +48,8 @@ public class SpawnZone : MonoBehaviour
                              transform.position.y + GetComponent<Collider2D>().bounds.extents.y)
             );
 
-            int enemyIndex = Random.Range(0, enemiesToSpawn.Length);
-            Instantiate(enemiesToSpawn[enemyIndex], spawnPos, Quaternion.identity);
+            int enemyIndex = Random.Range(0, enemiesToSpawn.Length); // Sceglie casualmente un nemico dall'array
+            Instantiate(enemiesToSpawn[enemyIndex], spawnPos, Quaternion.identity); // Istanzia il nemico nella scena
         }
     }
 }

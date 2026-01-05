@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -8,6 +6,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip shootClip;
     [SerializeField] private AudioClip deathClip;
     [SerializeField] private AudioClip damageClip;
+    [SerializeField] private AudioClip pickupClip;
+    [SerializeField] private AudioClip levelUpClip;
 
     private AudioSource audioSource;
     private PlayerController playerController;
@@ -38,27 +38,37 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            footstepTimer = 0f; // reset quando ti fermi
+            footstepTimer = 0f; // reset quando il player si derma
         }
     }
 
-    // Da chiamare quando il player spara
-    public void PlayShoot()
+    public void PlayShoot()  // Da chiamare quando il player spara
     {
         if (shootClip != null)
             audioSource.PlayOneShot(shootClip);
     }
 
     
-    public void PlayDamage()
+    public void PlayDamage() // da chiamare quando il player prende danno dai nemici
     {
          audioSource.PlayOneShot(damageClip);
     }
 
-    // Da chiamare quando il player muore
-    public void PlayDeath()
+    public void PlayDeath() // Da chiamare quando il player muore
     {
         if (deathClip != null)
             audioSource.PlayOneShot(deathClip);
+    }
+
+    public void PlayPickup() // da chiamare quando il player prende l'arma da terra
+    {
+        if (pickupClip != null)
+            audioSource.PlayOneShot(pickupClip);
+    }
+
+    public void PlayLevelUp() // da chiamare quando l'arma sale di livello
+    {
+        if (levelUpClip != null)
+            audioSource.PlayOneShot(levelUpClip);
     }
 }

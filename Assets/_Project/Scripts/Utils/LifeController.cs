@@ -21,7 +21,7 @@ public class LifeController : MonoBehaviour
 
         currentLife -= amount;
 
-        // Fai partire l'animazione di danno
+        // Fa partire l'animazione di danno
         if (playerAnimation != null)
         {
             playerAnimation.PlayDamage();
@@ -49,22 +49,40 @@ public class LifeController : MonoBehaviour
         // Blocca la fisica per evitare spinta dei nemici
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
-            rb.isKinematic = true;
+        {
+            rb.velocity = Vector2.zero;   // Ferma movimento
+            rb.isKinematic = true;        // Blocca la fisica
+        }
 
-        // Fai partire l'animazione di morte se esiste
+        // Disattiva tutti i collider
+        Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = false;
+        }
+
+        // Animazione di morte per il Player
         if (playerAnimation != null)
         {
             playerAnimation.PlayDeath();
+            Destroy(gameObject, 3f); // il Player rimane 3 secondi per l'animazione prima di distruggersi
+        }
+        else
+        {
+            EnemyDrop drop = GetComponent<EnemyDrop>();
+            if (drop != null)
+            {
+                drop.TryDrop();
+            }
+            Destroy(gameObject); // Destroy istantaneo per il nemico
         }
 
-        AudioManager playerAudio = GetComponent<AudioManager>();
+        AudioManager playerAudio = GetComponent<AudioManager>(); 
 
         if (playerAudio != null)
         {
             playerAudio.PlayDeath();
         }
-        // Distruzione del GameObject con un piccolo delay per far vedere l'animazione
-        Destroy(gameObject, 3f);
     }
 
 

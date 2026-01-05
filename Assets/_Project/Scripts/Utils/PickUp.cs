@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -8,15 +6,31 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) // Controlla se il Player entra in contatto con il pickup
+        if (collision.CompareTag("Player"))
         {
-            GameObject gunInstance = Instantiate(gunPrefab, collision.transform); // Istanzia l'arma come figlio del Player
+            Gun existingGun = collision.GetComponentInChildren<Gun>(); // Controlla se il player ha già un'arma
 
-            gunInstance.transform.localPosition = Vector3.zero; // Posiziona l'arma sul player (ad esempio al centro)
+            if (existingGun != null)
+            {
+                // Livella l'arma esistente
+                existingGun.LevelUp();
+            }
+            else
+            {
+                // Istanzia l'arma se il player non la possiede
+                GameObject gunInstance = Instantiate(gunPrefab, collision.transform);
+                gunInstance.transform.localPosition = Vector3.zero;
+                gunInstance.transform.localRotation = Quaternion.identity;
+            }
 
-            gunInstance.transform.localRotation = Quaternion.identity; // La uso per ruotare correttamente la Gun 
+            // Chiama l'AudioManager del player
+            AudioManager playerAudio = collision.GetComponent<AudioManager>();
+            if (playerAudio != null)
+            {
+                playerAudio.PlayPickup();
+            }
 
-            Destroy(gameObject); // Distrugge il pickup dalla scena
+            Destroy(gameObject); // Rimuove il pickup dalla scena
         }
     }
 }
